@@ -1,5 +1,6 @@
 // import React, {useState} from 'react';
-import "./AddUser.css";
+import Card from "../UI/Card";
+import classes from './AddUser.module.css';
 
 const addUser = () => {
    // const [enteredUserName, setUserName] = useState('');
@@ -17,21 +18,23 @@ const addUser = () => {
 
 
 
+
    return (
-      <div className="add-user">
-         <div>
-            {/* {onSubmit executes a function when the form is submitted} */}
-            <form onSubmit={addUserHandler}>
-               {/* htmlFor and id are used for screen readers. They connect the label to the input */}
-               <label htmlFor='username'>Username</label>
-               <input id='username' type="text"></input>
-               <label htmlFor='age'>Age (Years)</label>
-               <input id='age' type="text"></input>
-               <button type="submit">Add User</button>
-            </form>
-         </div>
-      </div>
+      // add class name from the adduser module called input. This classname however
+      //is a prop from card and has to be added to the Card component
+      <Card className={classes.input}>
+         {/* {onSubmit executes a function when the form is submitted} */}
+         <form onSubmit={addUserHandler}>
+            {/* htmlFor and id are used for screen readers. They connect the label to the input */}
+            <label htmlFor="username">Username</label>
+            <input id="username" type="text" />
+            <label htmlFor="age">Age (Years)</label>
+            <input id="age" type="number" />
+            <button type="submit">Add User</button>
+         </form>
+      </Card>
    );
 };
 
 export default addUser;
+
