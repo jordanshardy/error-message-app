@@ -1,6 +1,7 @@
 // import React, {useState} from 'react';
 import Card from "../UI/Card";
-import classes from './AddUser.module.css';
+import classes from "./AddUser.module.css";
+import Button from "../UI/Button";
 
 const addUser = () => {
    // const [enteredUserName, setUserName] = useState('');
@@ -12,12 +13,8 @@ const addUser = () => {
 
    const addUserHandler = (event) => {
       // preventDefault prevents the url from printing the value from the form
-      event.preventDefault()
+      event.preventDefault();
    };
-
-
-
-
 
    return (
       // add class name from the adduser module called input. This classname however
@@ -30,11 +27,10 @@ const addUser = () => {
             <input id="username" type="text" />
             <label htmlFor="age">Age (Years)</label>
             <input id="age" type="number" />
-            <button type="submit">Add User</button>
+            <Button type="submit">Add User</Button>
          </form>
       </Card>
    );
 };
 
 export default addUser;
-
