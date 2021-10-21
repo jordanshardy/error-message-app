@@ -3,7 +3,7 @@ import Card from "../UI/Card";
 import classes from "./AddUser.module.css";
 import Button from "../UI/Button";
 
-const AddUser = () => {
+const AddUser = (props) => {
    const [enteredUserName, setEnteredUserName] = useState("");
    const [enteredAge, setEnteredAge] = useState("");
 
@@ -33,7 +33,9 @@ const AddUser = () => {
       }
       setEnteredAge("");
       setEnteredUserName("");
-      console.log(enteredUserName, enteredAge);
+      // instead of console.log the data from username and age input, we use props and point to a function
+      // (that was defined in App.js) to add the name and age to the empty state array
+      props.onAddUser(enteredUserName, enteredAge);
    };
 
    return (
