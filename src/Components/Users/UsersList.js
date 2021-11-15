@@ -1,5 +1,6 @@
 import Card from "../UI/Card";
 import classes from "./UsersList.module.css";
+import React from "react";
 
 const UsersList = (props) => {
    // use props to access an array of users and display them in LI elements
